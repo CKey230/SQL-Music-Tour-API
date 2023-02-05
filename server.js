@@ -2,6 +2,7 @@
 const express = require('express')
 const app = express()
 const { Sequelize } = require('sequelize')
+const bands = require('./controllers/bands_controllers')
 
 
 // CONFIGURATION / MIDDLEWARE
@@ -10,12 +11,17 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 
+
 // ROOT
 app.get('/', (req, res) => {
     res.status(200).json({
         message: 'Welcome to the Tour API'
     })
 })
+
+//Controllers
+const bandsController = require('./controllers/bands_controllers')
+app.use('/bands', bandsController)
 
 // LISTEN
 app.listen(process.env.PORT, () => {
