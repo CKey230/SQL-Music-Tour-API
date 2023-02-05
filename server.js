@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
     })
 })
 
-//Controllers
+//CONTROLLER
 const bandsController = require('./controllers/bands_controllers')
 app.use('/bands', bandsController)
 
