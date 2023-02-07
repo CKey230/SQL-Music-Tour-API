@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 const {
   Model
-} = require('sequelize');
+} = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class Event extends Model {
     /**
@@ -17,10 +17,9 @@ module.exports = (sequelize, DataTypes) => {
     event_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true,
-      allowNull: false
+      autoIncrement: true
     },
-    event_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -41,6 +40,6 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Event',
     tableName: 'events',
     timestamps: false
-  });
-  return Event;
-};
+  })
+  return Event
+}
