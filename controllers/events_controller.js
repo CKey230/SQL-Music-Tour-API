@@ -25,8 +25,8 @@ events.get('/:id', async (req,res) => {
             where: { event_id: req.params.id }
         })
         res.status(200).json(foundEvents)
-    } catch (err) {
-        res.status(500).json(err)
+    } catch (error) {
+        res.status(500).json(error)
     }
 })
 
